@@ -1,0 +1,227 @@
+
+%greenblue-gradient {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00867b+0,00867b+0,627cc7+75 */
+    background: #00867b;
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, #00867b 0%, #00867b 0%, #627cc7 75%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #00867b 0%, #00867b 0%, #627cc7 75%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #00867b 0%, #00867b 0%, #627cc7 75%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00867b', endColorstr='#627cc7', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+}
+
+
+#login-page {
+    --background: url(../../../assets/background.jpg) no-repeat center center / cover;
+}
+
+.overlay {
+    @extend %greenblue-gradient;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+}
+
+#login-page {
+    ion-grid {
+        &, ion-row {
+            height: 100%;
+        }
+    }
+
+    ion-list, ion-item {
+        --ion-background-color: transparent;
+        --ion-color-base: transparent !important;
+        --background-focused: transparent;
+    }
+
+    ion-label {
+        color: #fff;
+        font-weight: 600;
+    }
+    ion-input {
+        border-bottom: 2px solid #20b4a4;
+        min-height: 30px;
+        color: #fff;
+        input {
+            --min-height: 30px;
+            --height: 30px;
+        }
+    }
+    ion-checkbox {
+        --border-color: #20b4a4;
+    }
+
+    ion-button {
+        --transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),
+        background-color 500ms ease,
+        color 15ms linear;
+        --background-hover: #627cc7;
+    }
+
+    .white-text {
+        color: #fff;
+    }
+}
+
+.shake {
+    -webkit-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+.pulse {
+    -webkit-animation: heartbeat 1.5s ease-in-out both;
+    animation: heartbeat 1.5s ease-in-out both;
+}
+
+@-webkit-keyframes shake-horizontal {
+
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70% {
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+    }
+
+    20%,
+    40%,
+    60% {
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+    }
+
+    80% {
+        -webkit-transform: translateX(8px);
+        transform: translateX(8px);
+    }
+
+    90% {
+        -webkit-transform: translateX(-8px);
+        transform: translateX(-8px);
+    }
+}
+
+@keyframes shake-horizontal {
+
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70% {
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+    }
+
+    20%,
+    40%,
+    60% {
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+    }
+
+    80% {
+        -webkit-transform: translateX(8px);
+        transform: translateX(8px);
+    }
+
+    90% {
+        -webkit-transform: translateX(-8px);
+        transform: translateX(-8px);
+    }
+}
+
+@-webkit-keyframes heartbeat {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    10% {
+        -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    17% {
+        -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    33% {
+        -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    45% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+}
+
+@keyframes heartbeat {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    10% {
+        -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    17% {
+        -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    33% {
+        -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    45% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+}

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title *ngIf="langService.homeData">
+      {{ langService.homeData.header }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="langService.homeData">
+  
+  <ion-grid>
+    <ion-row>
+      <h1>{{langService.homeData.content.header | uppercase}}</h1>
+    </ion-row>
+    <ion-row>
+      <ion-col size-sm="3" size-xs="5" class="avatar-wrapper" align-self-start>
+        <ion-img [src]="cameraService.avatar" *ngIf="cameraService.avatar"></ion-img>
+        <ion-icon name="camera" class="camera" (click)="changeAvatar()"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <h2 *ngIf="authSerivce.getUser()">{{ authSerivce.getUser().user_name }}</h2>
+        <p>{{ langService.homeData.content.lastSeen }} <br> <span *ngIf="authSerivce.getUser()">{{ lastseen | date:'medium' }}</span></p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+    
+</ion-content>
+
+<ion-footer *ngIf="langService.homeData">
+  <ion-button expand="full" color="danger" (click)="logout()">{{ langService.homeData.footer.logout.text }} <ion-icon name="log-out" [slot]="langService.homeData.footer.logout.slot"></ion-icon></ion-button>
+</ion-footer>

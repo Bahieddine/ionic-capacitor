@@ -1,0 +1,44 @@
+<!-- <ion-header>
+  <ion-toolbar class="ion-greenblue">
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content id="login-page">
+  <div class="overlay"></div>
+  <ion-grid *ngIf="langService.loginData">
+    <ion-row justify-content-center align-items-center>
+      <ion-col size="8">
+        <ion-img src="../../assets/logo.png" alt="Riyad Bank Logo" [class.pulse]="verify"></ion-img>
+        
+        <form [class.shake]="verify" [formGroup]="loginForm" (submit)="login()">
+          
+          <ion-list>
+            <ion-item lines="none" no-padding>
+              <ion-label position="floating">{{ langService.loginData.content.username }}</ion-label>
+              <ion-input formControlName="username"></ion-input>
+            </ion-item>
+
+            <ion-item lines="none" no-padding>
+              <ion-label position="floating">{{ langService.loginData.content.password }}</ion-label>
+              <ion-input type="password" formControlName="password"></ion-input>
+            </ion-item>
+
+            <ion-item lines="none" no-padding (click)="authService.stayIn = true">
+              <ion-ripple-effect></ion-ripple-effect>
+              <ion-label>{{ langService.loginData.content.remember }}</ion-label>
+              <ion-checkbox slot="start" mode="md"></ion-checkbox>
+            </ion-item>
+          </ion-list>
+
+          <ion-button class="ion-greenblue-gradient" expand="block" type="submit">
+            <ion-ripple-effect></ion-ripple-effect>
+            {{ langService.loginData.content.login }}
+          </ion-button>
+
+        </form>        
+        <div *ngIf="verify" class="white-text">{{ langService.loginData.content.validationMsg }}</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

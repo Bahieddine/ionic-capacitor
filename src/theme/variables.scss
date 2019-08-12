@@ -1,5 +1,6 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
+/* Font */
 
 /** Ionic CSS Variables **/
 :root {
@@ -74,4 +75,27 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** Custom colors **/
+  --ion-color-greenblue: #00877c;
+  --ion-color-greenblue-rgb: 0, 135, 124;
+  --ion-color-greenblue-contrast: #ffffff;
+  --ion-color-greenblue-contrast-rgb: 255, 255, 255;
+  --ion-color-greenblue-shade: #00776d;
+  --ion-color-greenblue-tint: #1a9389;
+
+  --highlight-height: 2px;
+
+  --ion-font-family: 'Cairo', sans-serif;
+  --ion-default-font: 'Cairo', sans-serif;
+}
+
+
+.ion-color-greenblue {
+  --ion-color-base: var(--ion-color-greenblue);
+  --ion-color-base-rgb: var(--ion-color-greenblue-rgb);
+  --ion-color-contrast: var(--ion-color-greenblue-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-greenblue-contrast-rgb);
+  --ion-color-shade: var(--ion-color-greenblue-shade);
+  --ion-color-tint: var(--ion-color-greenblue-tint);
 }

@@ -24,3 +24,63 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+/* Font */
+@import url('https://fonts.googleapis.com/css?family=Cairo:400,700&display=swap');
+
+
+%greenblue-gradient {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00867b+0,00867b+0,627cc7+75 */
+    background: #00867b;
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, #00867b 0%, #00867b 0%, #627cc7 75%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #00867b 0%, #00867b 0%, #627cc7 75%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #00867b 0%, #00867b 0%, #627cc7 75%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00867b', endColorstr='#627cc7', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+}
+
+%ion-greenblue-gradient {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00867b+0,00867b+0,627cc7+75 */
+    --background: #00867b;
+    /* Old browsers */
+    --background: -moz-linear-gradient(45deg, #00867b 0%, #00867b 0%, #627cc7 75%);
+    /* FF3.6-15 */
+    --background: -webkit-linear-gradient(45deg, #00867b 0%, #00867b 0%, #627cc7 75%);
+    /* Chrome10-25,Safari5.1-6 */
+    --background: linear-gradient(45deg, #00867b 0%, #00867b 0%, #627cc7 75%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00867b', endColorstr='#627cc7', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+}
+%ion-bluegreen-gradient {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00867b+0,00867b+0,627cc7+75 */
+    --background: #00867b;
+    /* Old browsers */
+    --background: -moz-linear-gradient(45deg, #627cc7 0%, #627cc7 0%, #00867b 75%);
+    /* FF3.6-15 */
+    --background: -webkit-linear-gradient(45deg, #627cc7 0%, #627cc7 0%, #00867b 75%);
+    /* Chrome10-25,Safari5.1-6 */
+    --background: linear-gradient(45deg, #627cc7 0%, #627cc7 0%, #00867b 75%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#627cc7', endColorstr='#00867b', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+}
+
+.ion-greenblue-gradient {
+    @extend %ion-greenblue-gradient;
+}
+ion-menu-button {
+    --color: #fff;
+}
+ion-header ion-toolbar {
+    @extend %ion-greenblue-gradient;
+    color: #fff;
+    text-align: center;
+}
+ion-menu ion-toolbar {
+    @extend %ion-bluegreen-gradient;
+}

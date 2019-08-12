@@ -1,24 +1,63 @@
 <ion-app>
   <ion-split-pane>
-    <ion-menu type="overlay">
+    <ion-menu type="push" [disabled]="!menuEnable">
+      
       <ion-header>
         <ion-toolbar>
-          <ion-title>Menu</ion-title>
+          <ion-title *ngIf="langService.menuData">{{langService.menuData.header}}</ion-title>
         </ion-toolbar>
       </ion-header>
+
       <ion-content>
         <ion-list>
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-img [src]="cameraService.avatar" *ngIf="cameraService.avatar"></ion-img>
+            </ion-avatar>
+            <ion-label>
+              <h2>Username</h2>
+              <div *ngIf="lastseen">
+                <p *ngIf="langService.menuData">
+                  {{langService.menuData.content.lastSeen}} 
+                  <br><span>{{lastseen | date:'medium' }}</span>
+                </p>
+                
+              </div>
+            </ion-label>
+          </ion-item>
+          
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
               <ion-icon slot="start" [name]="p.icon"></ion-icon>
-              <ion-label>
-                {{p.title}}
+              <ion-label *ngIf="langService.menuData">
+                <!-- {{p.title}} --> {{ langService.menuData.content.menu[i] }}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false">
+            <ion-item (click)="changeAvatar()">
+              <ion-icon slot="start" name="camera"></ion-icon>
+              <ion-label *ngIf="langService.menuData">
+                {{ langService.menuData.content.menu[1] }}
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
       </ion-content>
+
+      <ion-footer *ngIf="langService.getLang_info().lang === 'en'">
+        <ion-button expand="full" fill="clear"(click)="changeLang({ lang: 'ar', dir: 'rtl' })"><ion-icon name="planet" slot="start"></ion-icon> العربية</ion-button>
+        <ion-button expand="full" color="danger">Logout <ion-icon name="log-out" slot="end"></ion-icon></ion-button>
+      </ion-footer>
+
+      <ion-footer *ngIf="langService.getLang_info().lang === 'ar'">
+        <ion-button expand="full" fill="clear"(click)="changeLang({ lang: 'en', dir: 'ltr' })"><ion-icon name="planet" slot="start"></ion-icon> English</ion-button>
+        <ion-button expand="full" color="danger"><ion-icon name="log-out" slot="start"></ion-icon>تسجيل الخروج</ion-button>
+      </ion-footer>
     </ion-menu>
+
     <ion-router-outlet main></ion-router-outlet>
+    
   </ion-split-pane>
 </ion-app>

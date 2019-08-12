@@ -8,6 +8,12 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthGuardService } from './services/auth-guard.service';
+import { AuthenticationService } from './services/authentication.service';
+import { IonicStorageModule } from '@ionic/storage';
+import { LanguageService } from './services/language.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CameraService } from './services/camera.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,12 +21,21 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    IonicStorageModule.forRoot({
+		name: '__mydb',
+		driverOrder: ['sqlite', 'websql', 'indexeddb']
+	}),
+    ReactiveFormsModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    AuthGuardService,
+    AuthenticationService,
+    LanguageService,
+    CameraService
   ],
   bootstrap: [AppComponent]
 })

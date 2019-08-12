@@ -1,0 +1,13 @@
+.avatar-wrapper {
+  position: relative;
+
+  .camera {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 2em;
+    height: 2em;
+    fill: #627cc7;
+    cursor: pointer;
+  }
+}
