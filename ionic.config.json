@@ -1,0 +1,7 @@
+{
+  "name": "riyadbank",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
